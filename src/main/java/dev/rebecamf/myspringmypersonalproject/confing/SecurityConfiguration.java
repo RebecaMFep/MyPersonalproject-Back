@@ -1,4 +1,4 @@
-package dev.rebecamf.myspringmypersonalproject.auth.confing;
+package dev.rebecamf.myspringmypersonalproject.confing;
 
 
 import java.util.Arrays;
