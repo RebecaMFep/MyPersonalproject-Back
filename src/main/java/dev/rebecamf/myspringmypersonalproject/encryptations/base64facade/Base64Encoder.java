@@ -1,4 +1,4 @@
-package dev.rebecamf.myspringmypersonalproject.encryptations;
+package dev.rebecamf.myspringmypersonalproject.encryptations.base64facade;
 
 import java.util.Base64;
 
