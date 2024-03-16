@@ -28,7 +28,8 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
         return activity;
     }
 
-    public Activity save(ActivityDto eventDto) throws Exception {
+    @SuppressWarnings("null")
+    public Activity save(ActivityDto activityDto) throws Exception {
         
         try {
             Activity newActivity = Activity.builder()

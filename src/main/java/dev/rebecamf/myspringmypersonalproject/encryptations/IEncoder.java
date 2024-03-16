@@ -1,5 +1,7 @@
 package dev.rebecamf.myspringmypersonalproject.encryptations;
 
-public class IEncoder {
+public interface IEncoder {
+    
     String encode(String data);
+
 }

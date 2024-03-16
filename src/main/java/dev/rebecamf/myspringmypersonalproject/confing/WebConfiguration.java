@@ -17,6 +17,7 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Value(value = "${api-endpoint}/**")
     private String baseUrl;
 
+    @SuppressWarnings("null")
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(baseUrl)

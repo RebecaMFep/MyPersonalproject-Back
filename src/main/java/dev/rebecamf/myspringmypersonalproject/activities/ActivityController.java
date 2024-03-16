@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping(path = "${api-endpoint}/events")
+@RequestMapping(path = "${api-endpoint}/activities")
 public class ActivityController {
 
     ActivityService activityService;
@@ -26,8 +26,8 @@ public class ActivityController {
 
     @GetMapping(path = "")
     public List<Activity> index() {
-        List<Activity> events = activityService.getAll();
-        return events;
+        List<Activity> activities = activityService.getAll();
+        return activities;
     }
 
     @GetMapping(path = "/{id}")
@@ -37,7 +37,7 @@ public class ActivityController {
     }
 
     @PostMapping(path = "")
-    public ResponseEntity<Activity> store(@RequestBody ActivityDto eventDto) throws Exception {
+    public ResponseEntity<Activity> store(@RequestBody ActivityDto activityDto) throws Exception {
         Activity activity = activityService.save(activityDto);
         return ResponseEntity.status(201).body(activity);
     }

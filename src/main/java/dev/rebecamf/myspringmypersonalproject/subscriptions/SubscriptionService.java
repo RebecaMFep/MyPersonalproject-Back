@@ -26,6 +26,7 @@ public class SubscriptionService implements IGenericSubscription {
     public boolean subscribe(Long activityId) throws Exception {
 
         // recuperar la actividad
+        @SuppressWarnings("null")
         Activity activity = activityService.getById(activityId);
         
         // recuperar el usuario

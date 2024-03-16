@@ -1,10 +1,12 @@
 package dev.rebecamf.myspringmypersonalproject.encryptations;
 
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import dev.rebecamf.myspringmypersonalproject.encryptations.base64facade.Base64Encoder;
-import dev.rebecamf.myspringmypersonalproject.encryptations.BcryptEncoder;
+import dev.rebecamf.myspringmypersonalproject.encryptations.bcrypEncoder.BcryptEncoder;
+import dev.rebecamf.myspringmypersonalproject.encryptations.IEncryptFacade;
+
+@SuppressWarnings("unused")
 @Component
 public class EncoderFacade implements IEncryptFacade {
     
@@ -18,9 +20,9 @@ public class EncoderFacade implements IEncryptFacade {
 
         String dataEncrypted = "";
 
-        if (type == "bcrypt") dataEncrypted = new BcryptEncoder(bCryptPasswordEncoder).encode(data);
         if (type == "base64") dataEncrypted = new Base64Encoder().encode(data);
-
+        if (type == "bcrypt") dataEncrypted = new BcryptEncoder(bCryptPasswordEncoder).encode(data);
+        
         return dataEncrypted;
     }
 
