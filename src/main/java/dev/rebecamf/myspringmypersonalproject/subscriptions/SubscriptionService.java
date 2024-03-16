@@ -23,9 +23,9 @@ public class SubscriptionService implements IGenericSubscription {
         this.userRepository = userRepository;
     }
 
-    public boolean subscribe(Long eventId) throws Exception {
+    public boolean subscribe(Long activityId) throws Exception {
 
-        // recuperar el evento
+        // recuperar la actividad
         Activity activity = activityService.getById(activityId);
         
         // recuperar el usuario

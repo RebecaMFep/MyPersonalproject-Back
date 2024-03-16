@@ -9,7 +9,7 @@ import java.nio.file.StandardCopyOption;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import dev.rebecamf.myspringmypersonalproject.config.StorageProperties;
+import dev.rebecamf.myspringmypersonalproject.confing.StorageProperties;
 
 @Service
 public class FileSystemStorageService implements IStorageService {

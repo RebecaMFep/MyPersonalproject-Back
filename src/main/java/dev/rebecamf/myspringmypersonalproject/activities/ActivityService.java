@@ -17,12 +17,12 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
     }
 
     public List<Activity> getAll() {
-        List<Activity> events = repository.findAll();
-        return events;
+        List<Activity> activities = repository.findAll();
+        return activities;
 
     }
 
-    public Activity getById(@NonNull Long id) throws Exception {
+    public Activity getById(@SuppressWarnings("null") @NonNull Long id) throws Exception {
 
         Activity activity = repository.findById(id).orElseThrow(() -> new ActivityNotFoundException("Activity not found"));
         return activity;
@@ -31,7 +31,7 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
     public Activity save(ActivityDto eventDto) throws Exception {
         
         try {
-            Activity newEvent = Activity.builder()
+            Activity newActivity = Activity.builder()
                                 .title(activityDto.getTitle())
                                 .date(activityDto.getDate())
                                 .hour(activityDto.getHour())
@@ -51,6 +51,7 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
 
     }
 
+    @SuppressWarnings("null")
     public Activity delete(Long id) throws Exception {
         Activity activityToDelete = repository.findById(id).orElseThrow( () -> new ActivityNotFoundException("Activity does not exit"));
         repository.deleteById(id);
@@ -59,6 +60,7 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
 
     @Override
     public Activity update(ActivityDto activityDto, Long id) {
+        @SuppressWarnings("null")
         Activity activity = repository.findById(id).orElseThrow( () -> new ActivityNotFoundException("Activity does not exist"));
 
         activity.setTitle(activityDto.getTitle());

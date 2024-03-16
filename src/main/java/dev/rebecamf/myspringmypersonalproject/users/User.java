@@ -45,6 +45,6 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "activities_users", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "activity_id"))
-    Collection<Activity> activitiess;
+    Collection<Activity> activities;
 
 }

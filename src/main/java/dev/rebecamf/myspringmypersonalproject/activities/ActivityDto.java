@@ -1,6 +1,5 @@
 package dev.rebecamf.myspringmypersonalproject.activities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
