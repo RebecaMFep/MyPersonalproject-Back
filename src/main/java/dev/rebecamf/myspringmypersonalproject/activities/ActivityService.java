@@ -33,13 +33,14 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
         
         try {
             Activity newActivity = Activity.builder()
-                                .title(activityDto.getTitle())
-                                .date(activityDto.getDate())
-                                .hour(activityDto.getHour())
-                                .place(activityDto.getPlace())
-                                .description(activityDto.getDescription())
+                                .name(activityDto.getName())
+                                .location(activityDto.getLocation())
+                                .days(activityDto.getDays())
+                                .month(activityDto.getMonth())
+                                .time(activityDto.getTime())
+                                .range(activityDto.getRange())
                                 .capacity(activityDto.getCapacity())
-                                .isOutstanding(activityDto.isOutstanding())
+                                .description(activityDto.getDescription())
                                 .build();
             repository.save(newActivity);
 
@@ -64,10 +65,13 @@ public class ActivityService implements IGenericGetService<Activity>,IGenericEdi
         @SuppressWarnings("null")
         Activity activity = repository.findById(id).orElseThrow( () -> new ActivityNotFoundException("Activity does not exist"));
 
-        activity.setTitle(activityDto.getTitle());
-        activity.setDate(activityDto.getDate());
-        activity.setHour(activityDto.getHour());
-        activity.setPlace(activityDto.getPlace());
+        activity.setName(activityDto.getName());
+        activity.setLocation(activityDto.getLocation());
+        activity.setDays(activityDto.getDays());
+        activity.setMonth(activityDto.getMonth());
+        activity.setTime(activityDto.getTime());
+        activity.setRange(activityDto.getRange());
+        activity.setCapacity(activityDto.getCapacity());
         activity.setDescription(activityDto.getDescription());
 
         return repository.save(activity);

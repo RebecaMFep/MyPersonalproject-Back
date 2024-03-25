@@ -13,12 +13,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ActivityDto {
     
-    private String title;
-    private String date;
-    private String hour;
-    private String place;
-    private String description;
+    private String name;
+    private String location;
+    private String days;
+    private String month;
+    private String time;
+    private String range;
     private int capacity;
-    private boolean isOutstanding;
+    private String description;
+    
+  
 
 }

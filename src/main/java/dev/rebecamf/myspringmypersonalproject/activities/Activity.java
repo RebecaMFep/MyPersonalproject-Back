@@ -23,7 +23,7 @@ import jakarta.persistence.GenerationType;
 
 
 @Entity
-@Table(name = "events")
+@Table(name = "activities")
 @Data
 @Builder
 @Getter
@@ -37,17 +37,17 @@ public class Activity {
     @Column(name = "id_activity")
     private Long id; 
 
-    private String title;
-    private String date;
-    private String hour;
-    private String place;
+    private String name;
+    private String location;
+    private String days;
+    private String month;
+    private String time;
     @Column(columnDefinition = "TEXT")
     private String description;
+    private String range;
     private int capacity;
-    @Builder.Default
-    @Column(name = "is_outstanding")
-    private boolean isOutstanding = false;
-    private String img;
+    
+   
 
     @JsonIgnore
     @ManyToMany(mappedBy = "activities")
